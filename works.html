@@ -5,64 +5,81 @@
         <title>Yuina Furuya Portfolio Works</title>
         <meta name="description" content="古屋結菜の制作物">
         <script src="https://kit.fontawesome.com/b2f5e297f5.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/works-style.css">
+        <link rel="stylesheet" href="css/works.css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
 
     <body>
 
         <header>
-            <a class="top" href="#index-top">Yuina's Portfolio</a><!--::beforeでアイコンつける-->
+            <a class="sitename" href="index.html">Yuina's Portfolio</a><!--beforeアイコン-->
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skill">Skill</a></li>
-                    <li><a href="#works">Works</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#works">Works</a></li>
                 </ul>
             </nav>
+            <!----スマホ用サイトメニュー---->
+            <div class="menu">
+                <input type="checkbox" id="menu-icon-check">
+                <label for="menu-icon-check" class="menu-icon"><span></span></label>
+                    <ul class="menu-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#works">Works</a></li>
+                    </ul>
+            </div>
         </header>
 
         <main>
-            <div class="works-page">
+            <div id="works-top" class="works-page">
                 <div class="works-top">
+                    <div class="works-page-design">
+                        <div class="works-design-item"></div>
+                    </div>
                     <h1>ABCDEcoffee</h1>
-                    <div class="works-topimg">
+                    <div class="works-responsive-image">
                         <img src="/images/abcdecoffee-responsive.png" alt="レスポンシブデザインの画像">
                     </div>
                     <div class="works-text">
-                        <p>架空のコーヒーショップサイトを作成。</p>
+                        <p>架空のコーヒーショップサイトを制作。（HTML・CSSを2か月程学習後に制作）</p>
                         <dl>
                             <dt>サイトURL</dt>
                             <dd>サイトURLを貼り付け</dd>
                             <dt>制作範囲</dt>
-                            <dd>デザインからコーディングまで行いました。</dd>
+                            <dd>デザイン・コーディング・githubへのアップ</dd>
                             <dt>制作期間</dt>
-                            <dd>デザイン:1週間／コーディング:2週間</dd>
+                            <dd>デザイン : 2週間 / コーディング : 2週間</dd>
                             <dt>制作ツール</dt>
-                            <dd>XD:ワイヤーフレームの作成・デザイン
-                                <br>VScode:HTML・CSSにてコーディング</dd>
-                            <dt></dt>
-                            <dd>顧客に心から落ち着ける空間を届けることをコンセプトとしたコーヒーショップを仮定しショップサイトを制作しました。
-                                顧客は30代の男女をターゲットとしています。
-                            <br>PCだけでなく、スマホやタブレットにも対応させています。</dd>
-                            <dt>こだわり</dt>
-                            <dd>落ち着いた空間を表現するため、ダークトーンのカラーを使用しました。
-                                <br>また、顧客にリラックスしてほしいという思いを伝えるため、緑を組み合わせました。
-                                <br>ユーザが利用しやすいよう、ヘッダーやメニューアイコンからすべてのページにつながるよう設計しました。</dd>
+                            <dd>Adobe XD : ワイヤーフレームの作成・デザイン
+                            <br>Visual Studio Code : HTML・CSSでコーディング</dd>
+                            <dt>コンセプト</dt>
+                            <dd>顧客に心から落ち着ける空間を届けたい。こだわりのコーヒー・スイーツを味わってほしい。</dd>
+                            <dt>ターゲット</dt>
+                            <dd>30代の会社員</dd>
+                            <dt>制作目的</dt>
+                            <dd>来客数を増やす。お店のメニューを知ってもらう。</dd>
+                            <dt>工夫した点</dt>
+                            <dd>落ち着いた空間を表現するため、ダークトーンのカラーを使用し、緑を配色しました。
+                            <br>ユーザが利用しやすいよう、ヘッダー・メニューアイコン・フッターから全てのページにつながるよう設計し、レスポンシブにも対応させました。 </dd>
                             <dt>苦労した点</dt>
-                            <dd>レスポンシブデザインの作成に苦労しました。</dd>
+                            <dd>レスポンシブ対応に苦労しました。特にモバイル版の、メニューアイコンをクリックすると横からメニューが表示される部分は、学習サービスで扱われなかったため、ネットで検索・学習し、コーディングしました。
+                            <br>コンタクトフォームは、勉強不足で実際は運用できない状態です。今後学習を進め、実装したいと考えています。</dd>
                         </dl>
                     </div>
                 </div>
-                <div class="works-items">
+                <div class="works-display-images">
                     <h2>PC画面表示イメージ</h2>
-                    <div class="items-container">
-                        <div class="item-left">
+                    <div class="works-images">
+                        <div class="works-main-image">
                             <img src="/images/abcdecoffee1.png" alt="PC画面表示キャプチャ">
                         </div>
-                        <div class="item-right">
+                        <div class="works-other-image">
                             <img src="/images/abcdecoffee2.png" alt="PC画面表示キャプチャ">
                             <img src="/images/abcdecoffee3.png" alt="PC画面表示キャプチャ">
                             <img src="/images/abcdecoffee4.png" alt="PC画面表示キャプチャ">
+                            <img src="/images/abcdecoffee5.png" alt="PC画面表示キャプチャ">
                         </div>
                     </div>
                 </div>
@@ -72,12 +89,13 @@
         </main>
 
         <footer>
-            <a class="top" href="#index-top">Yuina's Portfolio</a><!--::beforeでアイコンつける-->
+            <a class="sitename" href="index.html">Yuina's Portfolio</a><!--beforeアイコン-->
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">Skill</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#works-top">page-top</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#skill">Skill</a></li>
+                <li><a href="index.html#works">Works</a></li>
             </ul>
         </footer>
 

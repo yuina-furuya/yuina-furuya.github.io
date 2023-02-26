@@ -1,27 +1,15 @@
 *{
     box-sizing: border-box;
     font-family: 游明朝 Medium;
+    color: #4C3949;
 }
 body{
     margin: 0;
 }
-a.top{
-    font-size: 15px;
-    margin: 0;
-    padding: 10px;
-}
-a.top::before{
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url(/images/bird-icon.png);
-    background-size: contain;
-    line-height: 20px;
-}
 h2{
     font-size: 30px;
     margin: 10px 0;
+    text-align: center;
 }
 h2::before{
     content: "";
@@ -32,13 +20,44 @@ h2::before{
     background-size: contain;
     line-height: 30px;
 }
+h2::after{
+    font-size: 16px;
+    display: block;/*改行*/
+}
 h3{
+    font-size: 25px;
+    margin: 10px 0;
+}
+h4{
     font-size: 20px;
     margin: 10px 0;
 }
+h4 span{
+    border-bottom: 1px solid #CB7E8C;
+}
+p{
+    font-size: 16px;
+    margin: 0;
+    padding: 0 0 25px 0;
+}
 a{
-    color: black;
     text-decoration: none;
+    font-size: 16px;
+}
+.btn{
+    background-color: #CB7E8C;
+    padding: 10px 60px;
+    border-radius: 50px;
+    box-shadow: 0 4px #4C3949;
+    display: inline-block;
+}
+.btn:active{
+    position: relative;
+    top: 4px;
+    box-shadow: none;
+}
+.btn a{
+    display: inline-block;
 }
 ul{
     margin: 0;
@@ -48,17 +67,17 @@ li{
     list-style-type: none;
     transition:all 0.5s;
 }
-.wrapper{
-    height: 100vh;
-}
 img{
-    box-shadow: 50px 50px rgb(235, 205, 220);
+    box-shadow: 20px 20px #EFE1EA;
+}
+.wrapper{
+    padding: 50px;
 }
 /*---------------ヘッダー設定ここから---------------*/
 header{
-    border-bottom: 1px solid black;
     width: 100%;
-    background-color: white;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 0.7);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -66,100 +85,204 @@ header{
     text-align: center;/*サイトタイトルを真ん中に*/
     flex-direction: column;/*h1とnavを上から下に並べる*/
 }
-header ul{
+a.sitename{
+    margin: 0;
+    padding: 3px;
+}
+a.sitename::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/bird-icon.png);
+    background-size: contain;
+    line-height: 20px;
+}
+nav ul{
     display: flex;
     justify-content: space-around;/*ulを均等に横並び*/
 }
-header li:hover{
-    background-color: rgb(210, 205, 200);
+nav li:hover{
+    background-color: #CB7E8C;
 }
 nav a{
     display: inline-block;
-    padding: 10px 25px;
+    padding: 3px 60px;
 }
+/*----------スマホ用サイトメニュー設定ここから----------*/
+/*メニューアイコン設定*/
+#menu-icon-check{/*チェックボックスを非表示*/
+    display: none;
+}
+.menu-icon{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 40px;/*押下範囲拡張*/
+    width: 60px;/*押下範囲拡張*/
+    display: none;/*通常非表示,表示時flexで中央寄せ*/
+    justify-content: center;/*spanを中央寄せ*/
+    align-items: center;/*spanを中央寄せ*/
+    z-index: 20;
+}
+.menu-icon span,
+.menu-icon span::before,
+.menu-icon span::after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #CB7E8C;
+    border-radius: 3px;
+    position: absolute;/*spanをbefore,afterの起点とする*/
+    transition: all 0.5s;
+}
+.menu-icon span::before{
+    bottom: 8px;/*spanを起点に下に8px*/
+    background-color: #4C3949;
+}
+.menu-icon span::after{
+    top: 8px;/*spanを起点に上に8px*/
+    background-color: #4C3949;
+}
+#menu-icon-check:checked~.menu-icon span{
+    background-color: rgba(255,255,255,0);/*クリック時透明*/
+}
+#menu-icon-check:checked~.menu-icon span::before{
+    bottom: 0;
+    transform: rotate(45deg);/*45度傾ける*/
+}
+#menu-icon-check:checked~.menu-icon span::after{
+    top: 0;
+    transform: rotate(-45deg);/*45度傾ける*/
+}
+/*メニューリスト設定*/
+#menu-icon-check:checked~.menu-list {
+    bottom: 0;/*クリック時メニュー表示*/
+}
+.menu-list{
+    background-color: rgba(239,225,234,0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 100%;/*画面外へ*/
+    left: 0;
+    z-index: 15;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.menu-list li{
+    width: 100%;
+}
+.menu-list li:hover{
+    background-color: #CB7E8C;
+}
+.menu-list a{
+    display: inline-block;
+    width: 100%;
+    padding: 10vh 0;
+}
+/*----------スマホ用サイトメニュー設定ここまで----------*/
 /*---------------ヘッダー設定ここまで---------------*/
 /*---------------メイン設定ここから---------------*/
 /*---------------トップ設定---------------*/
 .top-wrapper{
     text-align: center;
-    position: relative;
+    position: relative;/*親要素-起点*/
+    overflow: hidden;/*はみ出し部分を非表示*/
 }
 h1{
     font-size: 40px;
     margin: 0;
-    position: absolute;
-    top: 45vh;
-    width: 100%;
+    position: absolute;/*子要素*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);/*中央寄せ*/
 }
 .top-design{
-    width: 100%;
     display: flex;
     justify-content: space-between;/*水平方向両端*/
     z-index: -1;
 }
 .design-item1{
-    border: 10px solid rgb(235, 205, 220);
-    border-radius: 50% 50% 50% 50%;
-    height: 100vh;
-    width: 60vw;
-    margin: 0 0 0 -25%;
-    overflow: hidden;
+    border: 10px solid #EFE1EA;
+    border-radius: 60% 40% 60% 40%;
+    height: 650px;
+    width: 900px;
+    margin: 0 20% 0 -15%;
 }
 .design-item2{
-    background-color: rgb(235, 205, 220);
+    background-color: #EFE1EA;
     border-radius: 30% 70% 30% 70%;
-    height: 80vh;
-    width: 50vw;
-    margin: 10% -15% 0 0;
-    overflow: hidden;
+    height: 600px;
+    width: 800px;
+    margin: 60px -10% 0 10%;
 }
 /*---------------アバウト設定---------------*/
-.about-wrapper{
-    text-align: center;
-}
-.about-container{
-    padding: 50px;
+.about-items{
     display: flex;
     justify-content: center;
 }
 .about-wrapper h2::after{
     content: "自己紹介";
-    font-size: 15px;
-    display: block;/*改行のため*/
 }
-.about-left{
-    padding: 80px;
+.about-image{
+    padding: 20px 80px;
 }
-.about-left img{
+.about-image img{
     width: 300px;
     height: 300px;
 }
-.about-right{
-    padding: 80px;
+.about-text{
+    padding: 20px 80px;
+}
+.about-text h3{
+    padding: 0 10px;
+    position: relative;
+    border-left: 8px solid #CB7E8C;
+}
+.about-text h3::before{
+    content: '';
+    position: absolute;
+    width: 20%;
+    bottom: 0;/*親要素bottom0に配置*/
+    left: 0; /*親要素left0に配置*/
+    border-bottom: 3px solid #CB7E8C;
+}
+.about-text h3::after{
+    content: '';
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px solid #4C3949;
+}
+.about-text h4::before{
+    content: "フルヤ ユイナ";
+    font-size: 14px;
+    display: block;/*改行*/
 }
 /*---------------スキル設定---------------*/
 .skill-wrapper{
     text-align: center;
-    position: relative;
+    position: relative;/*親要素-起点*/
+    overflow: hidden;/*はみ出し部分を非表示*/
 }
 .skill-wrapper h2::after{
     content: "技術";
-    font-size: 15px;
-    display: block;/*改行のため*/
-}
-.skill-container{
-    position: absolute;
-    width: 100vw;
 }
 h3.tool::after{
     content: "道具";
-    font-size: 10px;
-    display: block;/*改行のため*/
+    font-size: 16px;
+    display: block;
 }
-h3.others:after{
-    content: "その他";
-    font-size: 10px;
-    display: block;/*改行のため*/
+.skill-items h3{
+    padding: 10px 0;
+}
+.skill-item p{
+    padding: 0;
 }
 .skill-items{
     display: flex;
@@ -167,77 +290,74 @@ h3.others:after{
     justify-content: center;
 }
 .skill-item{
-    border: 1px solid black;
+    background-color: #EFE1EA;
+    border: 1px solid #4C3949;
     height: 80px;
     width: 80px;
-    margin: 0 80px 40px 80px;
+    margin: 0 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 20px 20px rgb(235, 205, 220);
 }
 .skill-design{
-    width: 100%;
+    position: absolute;/*子要素*/
+    top: 0;
+
     display: flex;
-    justify-content: space-between;/*水平方向両端*/
     z-index: -1;
-    position: absolute;
+    justify-content: center;
 }
 .design-item3{
-    background-color: rgb(210, 205, 200);
+    background-color:#EFE1EA;
     border-radius: 70% 30% 70% 30%;
-    height: 80vh;
-    width: 50vw;
-    margin: 10% 0 0 -25%;
-    overflow: hidden;
+    height: 500px;
+    width: 700px;
+    margin: 60px 40vw 0 -30vw;
 }
 .design-item4{
-    border: 10px solid rgb(210, 205, 200);
-    border-radius: 50% 50% 50% 50%;
-    height: 100vh;
-    width: 60vw;
-    margin: 0 -25% 0 0;
-    overflow: hidden;
+    border: 10px solid #EFE1EA;
+    border-radius: 40% 60% 40% 60%;
+    height: 550px;
+    width: 800px;
+    margin: 0 0 0 0;
 }
 /*---------------ワークス設定---------------*/
-.works-wrapper{
+.works-wrapper {
     text-align: center;
 }
 .works-wrapper h2::after{
     content: "制作物";
-    font-size: 15px;
-    display: block;/*改行のため*/
 }
-.works-container{
-    padding: 50px;
+.works-items{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-around;/*複数掲載用*/
 }
 .works-item img{
     height: 300px;
     width: 300px;
+    margin: 10px 10px 10px 0;
 }
 .works-item img:hover{
-    box-shadow: 50px 50px rgb(210, 205, 200);
+    box-shadow: 25px 25px #CB7E8C;
     transition:all 0.5s;
+}
+.works-item p{
+    text-align: left;
 }
 /*---------------メイン設定ここまで---------------*/
 /*---------------フッター設定ここから---------------*/
 footer{
-    border-top: 1px solid black;
-    background-color: rgb(235, 205, 220);
+    background-color: #EFE1EA;
     display: flex;
     padding: 20px 80px;
-}
-footer h4{
-    margin-right: auto;
 }
 footer ul{
     margin-left: auto;
 }
-footer a:hover{
-    text-decoration: underline;
-    transition:all 0.5s;/*←効かない！*/
+footer li:hover{
+    background-color: #CB7E8C;
+}
+footer a{
+    padding: 5px 40px;
 }
 /*---------------フッター設定ここまで---------------*/
