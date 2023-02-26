@@ -1,0 +1,267 @@
+*{
+    box-sizing: border-box;
+    font-family: 游明朝 Medium;
+    color: #4C3949;
+}
+body{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+p{
+    font-size: 16px;
+    margin: 0;
+    padding: 0 ;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+    transition:all 0.5s;
+}
+/*---------------ヘッダー設定ここから---------------*/
+header{
+    width: 100%;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    text-align: center;/*サイトタイトルを真ん中に*/
+    flex-direction: column;/*h1とnavを上から下に並べる*/
+}
+a.sitename{
+    margin: 0;
+    padding: 3px;
+}
+a.sitename::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/bird-icon.png);
+    background-size: contain;
+    line-height: 20px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;/*ulを均等に横並び*/
+}
+nav li:hover{
+    background-color: #CB7E8C;
+}
+nav a{
+    display: inline-block;
+    padding: 3px 60px;
+}
+/*----------スマホ用サイトメニュー設定ここから----------*/
+/*メニューアイコン設定*/
+#menu-icon-check{/*チェックボックスを非表示*/
+    display: none;
+}
+.menu-icon{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 40px;/*押下範囲拡張*/
+    width: 60px;/*押下範囲拡張*/
+    display: none;/*通常非表示,表示時flexで中央寄せ*/
+    justify-content: center;/*spanを中央寄せ*/
+    align-items: center;/*spanを中央寄せ*/
+    z-index: 20;
+}
+.menu-icon span,
+.menu-icon span::before,
+.menu-icon span::after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #CB7E8C;
+    border-radius: 3px;
+    position: absolute;/*spanをbefore,afterの起点とする*/
+    transition: all 0.5s;
+}
+.menu-icon span::before{
+    bottom: 8px;/*spanを起点に下に8px*/
+    background-color: #4C3949;
+}
+.menu-icon span::after{
+    top: 8px;/*spanを起点に上に8px*/
+    background-color: #4C3949;
+}
+#menu-icon-check:checked~.menu-icon span{
+    background-color: rgba(255,255,255,0);/*クリック時透明*/
+}
+#menu-icon-check:checked~.menu-icon span::before{
+    bottom: 0;
+    transform: rotate(45deg);/*45度傾ける*/
+}
+#menu-icon-check:checked~.menu-icon span::after{
+    top: 0;
+    transform: rotate(-45deg);/*45度傾ける*/
+}
+/*メニューリスト設定*/
+#menu-icon-check:checked~.menu-list {
+    bottom: 0;/*クリック時メニュー表示*/
+}
+.menu-list{
+    background-color: rgba(239,225,234,0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 100%;/*画面外へ*/
+    left: 0;
+    z-index: 15;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.menu-list li{
+    width: 100%;
+}
+.menu-list li:hover{
+    background-color: #CB7E8C;
+}
+.menu-list a{
+    display: inline-block;
+    width: 100%;
+    padding: 10vh 0;
+}
+/*---------------ヘッダー設定ここまで---------------*/
+/*---------------メイン設定ここから---------------*/
+.about-page{
+    padding: 0 60px;
+}
+h1{
+    font-size: 30px;
+    margin: 65px 0 0 0;
+    text-align: center;
+}
+h1::before{
+    content: "";
+    display: inline-block;
+    background-image: url(/images/bird-icon.png);
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+    line-height: 30px;
+}
+h1::after{
+    content: "自己紹介";
+    font-size: 16px;
+    display: block;
+}
+h2{
+    font-size: 25px;
+    position: relative;
+    padding: 0 0 16px 20px;
+    border-left: 8px solid #CB7E8C;
+}
+h2::before{
+    content: '';
+    position: absolute;
+    width: 28%;
+    bottom: 0;/*親要素bottom0に配置*/
+    left: 0; /*親要素left0に配置*/
+    border-bottom: 3px solid #CB7E8C;
+    z-index: 1;
+}
+h2::after{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    display: block;
+    border-bottom: 3px solid #4C3949;
+}
+h2.profile::after{
+    content: "基本情報";
+}
+h2.work-history::after{
+    content: "職務経歴";
+}
+h2.learning-duration::after{
+    content: "学習期間";
+}
+h2.self-promotion::after{
+    content: "自己PR";
+}
+h4{
+    font-size: 20px;
+    margin: 0;
+}
+h4::before{
+    content: "フルヤ ユイナ";
+    font-size: 14px;
+    display: block;
+}
+.profile-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.profile-image{
+    margin: 20px 80px;
+}
+.profile-text{
+    margin: 20px 80px;
+}
+img{
+    height: 300px;
+    width: 300px;
+    box-shadow: 20px 20px #EFE1EA;
+}
+dl{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+dt{
+    width: 20%;
+}
+dd{
+    width: 80%;
+    margin: 0;
+}
+.pr-container{
+    margin: 60px 60px;
+}
+h3{
+    text-align: center;
+    background-color: #EFE1EA;
+}
+.promotion-item p{
+    padding: 0 20px 20px 20px;
+}
+.promotion-items{
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+.promotion-item{
+    width:30%;
+    border-bottom: 3px solid #4C3949;
+}
+/*---------------メイン設定ここまで---------------*/
+/*---------------フッター設定ここから---------------*/
+footer{
+    background-color: #EFE1EA;
+    display: flex;
+    padding: 20px 80px;
+}
+footer ul{
+    margin-left: auto;
+}
+footer li:hover{
+    background-color: #CB7E8C;
+}
+footer a{
+    padding: 5px 40px;
+}
+/*---------------フッター設定ここまで---------------*/

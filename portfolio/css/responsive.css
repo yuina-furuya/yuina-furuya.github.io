@@ -1,0 +1,249 @@
+/*---タブレット用-----------------------------------------------*/
+@media(max-width:1000px){
+main{
+    text-align: center;
+}
+p{
+    text-align: left;
+}
+/*---header---------------------------*/
+header{
+    flex-direction: row;
+    height: 40px;
+    line-height: 40px;
+}
+nav{
+    margin-left: auto;
+}
+nav a{
+    padding: 0 60px;
+}
+/*---index-top------------------------*/
+.design-item1{
+    border: 10px solid #EFE1EA;
+    border-radius: 60% 40% 60% 40%;
+    height: 550px;
+    width: 650px;
+    margin: 0 20% 0 -20%;
+}
+.design-item2{
+    background-color: #EFE1EA;
+    border-radius: 30% 70% 30% 70%;
+    height: 500px;
+    width: 600px;
+    margin: 60px -20% 0 0;
+}
+/*---index-about----------------------*/   
+.about-items{
+    display: block;
+}
+.about-image,
+.about-text{
+    padding: 20px 40px;
+}
+/*---index-skill----------------------*/
+.skill-design{
+    display: none;
+}
+/*---index-works----------------------*/
+.works-items{
+    display: block;
+}
+.works-item{
+    width: 400px;
+    margin: 0 auto;
+}
+/*---footer---------------------------*/
+footer{
+    padding: 10px;
+}
+
+/*---works-page-----------------------------------*/
+.works-page{
+    padding: 20px 40px;
+}
+.works-design-item{
+    border-radius: 70% 30% 70% 30%;
+    height: 300px;
+    width: 650px;
+    top: 250px;
+}
+.works-responsive-image img{
+    width: 600px;
+}
+.works-text{
+    padding: 30px 0;
+}
+    .works-text dl,
+    .works-text dt,
+    .works-text dd{
+    border: none;
+    width: 100%;
+}
+.works-images{
+    display: block;
+}
+.works-main-image,
+.works-other-image{
+    width: 100%;
+    padding: 0;
+}
+
+/*---about-page-----------------------------------*/
+.about-page{
+    padding: 20px 40px;
+}
+.profile-container,
+.promotion-items{
+    display: block;
+}
+.profile-image,
+.profile-text,
+.pr-container{
+    margin: 0;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.profile-text h4,
+.about-page h2{
+    text-align: left;
+}
+.profile-container dt,
+.profile-container dd{
+    width: 100%;
+    text-align: left;
+}
+.profile-container span{
+    border-bottom: 1px solid #CB7E8C;
+}
+.promotion-item{
+    width: 100%;
+}
+
+}
+/*---タブレットここまで----------------------------------------------*/
+
+/*---スマートフォン用-----------------------------------------------*/
+@media(max-width:670px){
+.btn{
+    width: 100%;
+}
+main{
+    text-align: center;
+    }
+p{
+    text-align: left;
+}
+/*---header---------------------------*/
+header{
+    flex-direction: row;
+    height: 40px;
+    line-height: 40px;
+}
+nav{
+    display: none;
+}
+.menu-icon{
+    display: flex;/*メニューアイコン表示＆spanを中央寄せ*/
+}
+    
+/*---index-top------------------------*/
+.design-item1{
+    border: 10px solid #EFE1EA;
+    border-radius: 60% 40% 60% 40%;
+    height: 450px;
+    width: 550px;
+    margin: 50px 50px 0 -400px;
+}
+.design-item2{
+    background-color: #EFE1EA;
+    border-radius: 30% 70% 30% 70%;
+    height: 400px;
+    width: 300px;
+    margin: 80px -180px 0 0;
+}
+/*---index-about----------------------*/   
+.about-items{
+    display: block;
+}
+.about-image,
+.about-text{
+    padding: 20px 10px;
+}
+/*---index-skill----------------------*/
+.skill-design{
+    display: none;
+}
+/*---index-works----------------------*/
+.works-items{
+    display: block;
+}
+/*---footer---------------------------*/
+footer{
+    padding: 10px;
+}
+
+/*---works-page-----------------------------------*/
+.works-page{
+    padding: 20px;
+}
+.works-design-item{
+    border-radius: 70% 30% 70% 30%;
+    height: 150px;
+    width: 350px;
+    top: 180px;
+}
+.works-responsive-image img{
+    width: 300px;
+}
+.works-text{
+    padding: 30px 0;
+}
+.works-text dl,
+.works-text dt,
+.works-text dd{
+    border: none;
+    width: 100%;
+}
+.works-images{
+    display: block;
+}
+.works-main-image,
+.works-other-image{
+    width: 100%;
+    padding: 0;
+}
+
+/*---about-page-----------------------------------*/
+.about-page{
+    padding: 20px;
+}
+.profile-container,
+.promotion-items{
+    display: block;
+}
+.profile-image,
+.profile-text,
+.pr-container{
+    margin: 0;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.profile-text h4,
+.about-page h2{
+    text-align: left;
+}
+.profile-container dt,
+.profile-container dd{
+    width: 100%;
+    text-align: left;
+}
+.profile-container span{
+    border-bottom: 1px solid #CB7E8C;
+}
+.promotion-item{
+    width: 100%;
+}
+
+}
+/*---スマートフォンここまで-----------------------------------------------*/

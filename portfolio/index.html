@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Yuina Furuya Portfolio</title>
+        <meta name="description" content="古屋結菜のポートフォリオサイトです">
+        <script src="https://kit.fontawesome.com/b2f5e297f5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+
+    <body>
+
+        <header>
+            <a class="sitename" href="#index-top">Yuina's Portfolio</a><!--::beforeでアイコンつける-->
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#works">Works</a></li>
+                </ul>
+            </nav>
+            <!----スマホ用サイトメニュー---->
+            <div class="menu">
+                <input type="checkbox" id="menu-icon-check">
+                <label for="menu-icon-check" class="menu-icon"><span></span></label>
+                    <ul class="menu-list">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skill">Skill</a></li>
+                        <li><a href="#works">Works</a></li>
+                    </ul>
+            </div>
+        </header>
+
+
+        <main>
+            <div id="index-top" class="top-wrapper wrapper">
+                <div class="top-design">
+                    <div class="design design-item1"></div>
+                    <div class="design design-item2"></div>
+                </div>
+                <h1>Portfolio<br>Yuina Furuya</h1>
+            </div>
+
+            <div id="about" class="about-wrapper wrapper">
+                <div class="about-container">
+                    <h2>About</h2><!--beforeアイコン&after「自己紹介」-->
+                    <div class="about-items">
+                        <div class="about-image">
+                            <img src="images/my-photo.jpg">
+                        </div>
+                        <div class="about-text">
+                            <h3>Profile</h3>
+                            <h4><span>古屋 結菜</span></h4>
+                            <p>現在は製造業の事務職をしております。
+                            <br>業務改善のため、Excelの関数や数式、マクロを用いて業務効率化のツールを制作する中で、周囲の要望を実現する方法を考えて数式を組むことや、制作過程で思惑通りに動かない原因の分析・改修作業にやりがいを感じ、サービスを制作・開発するエンジニアに興味を持ちました。
+                            <br>まずはWebでマークアップ言語のHTML・CSSを学習し、Webサイトを制作しました。
+                            <br>実際の制作や学習を通じて、エンジニアとして制作や開発に携わりたいという思いが強くなり、転職を決意いたしました。</p>
+                            <a href="about.html" class="btn">More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="skill" class="skill-wrapper wrapper">
+                <div class="skill-design">
+                    <div class="design design-item3"></div>
+                    <div class="design design-item4"></div>
+                </div>
+                <div class="skill-container">
+                    <h2>Skill</h2><!--beforeアイコン&after「技術」-->
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <p><span class="fa-solid fa-code"></span></p>
+                        </div>
+                        <div class="skill-item">
+                            <p><span class="fa-brands fa-css3"></span></p>
+                        </div>
+                    </div>
+                    <h4><span>HTML・CSS</span></h4>
+                    <p>オンラインプログラミング学習サービスのProgateの学習プログラム終了後、Web制作を通じて更に学習を進めています。
+                    <br>基礎的なコーディングが可能です。</p>
+                    <h3 class="tool">Tool</h3><!--after「道具」-->
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <p>XD</p>
+                            </div>
+                            <div class="skill-item">
+                                <p>VScode</p>
+                            </div> 
+                        </div>  
+                    <h4><span>AdobeXD・Visual Studio Code</span></h4>
+                    <p>デザインカンプの作成、コーディングに使用しています。
+                    <br>基礎的な操作が可能です。</p>
+                </div>
+            </div>
+
+            <div id="works" class="works-wrapper wrapper">                      
+                <div class="works-container">
+                    <h2>Works</h2><!--beforeアイコン&after「制作物」-->  
+                    <div class="works-items">
+                        <div class="works-item">
+                            <a href="works.html"><img src="/images/abcdecoffee-top.png" alt="ABCDEcoffeeサイトトップの画像"></a><!--box-shadowでピンク影つける-->
+                            <h4><span>ABCDEcoffee</span></h4>
+                            <p>架空のコーヒーショップサイトを制作しました。
+                            <br>製作期間 : 一ヶ月
+                            <br>制作ツール : AdobeXD・Visual Studio Code</p>
+                            <a href="works.html" class="btn">More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <a class="sitename" href="#index-top">Yuina's Portfolio</a><!--beforeアイコン-->
+            <ul>
+                <li><a href="#index-top">page-top</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#skill">Skill</a></li>
+                <li><a href="#works">Works</a></li>
+            </ul>
+        </footer>
+
+    </body>
+
+</html>
