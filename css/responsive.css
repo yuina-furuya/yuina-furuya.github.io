@@ -185,6 +185,10 @@ nav{
 .works-items{
     display: block;
 }
+.works-item{
+    width: 100%;
+    margin: 0 auto;
+}
 .works-item img{
     width: 80%;
     height: auto;
