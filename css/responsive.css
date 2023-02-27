@@ -134,6 +134,9 @@ main{
 p{
     text-align: left;
 }
+.wrapper{
+    padding: 20px;
+}
 /*---header---------------------------*/
 header{
     flex-direction: row;
@@ -170,6 +173,10 @@ nav{
 .about-text{
     padding: 20px 10px;
 }
+.about-image img{
+    width: 80%;
+    height: auto;
+}
 /*---index-skill----------------------*/
 .skill-design{
     display: none;
@@ -177,6 +184,10 @@ nav{
 /*---index-works----------------------*/
 .works-items{
     display: block;
+}
+.works-item img{
+    width: 80%;
+    height: auto;
 }
 /*---footer---------------------------*/
 footer{
